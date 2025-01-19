@@ -1,66 +1,149 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Projeto de Envio de Tweets
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Bem-vindo ao repositório do **Projeto de Envio de Tweets**! Este é um projeto desenvolvido com Laravel que permite aos usuários se cadastrarem, fazerem login e publicarem tweets. Além disso, os usuários podem fazer upload de uma foto de perfil que será exibida junto com seus tweets.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Desenvolvido com Livewire
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Este projeto foi desenvolvido utilizando o framework Livewire para simplificar a criação de componentes dinâmicos e reativos no Laravel. A abordagem do Livewire permite uma experiência rica para o usuário, com menos dependência de JavaScript no front-end.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Este projeto também foi desenvolvido com a orientação do **professor do Especializa TI**, a quem agradeço pelos ensinamentos.
 
-## Learning Laravel
+Link do canal e do curso: https://youtu.be/lMNpKM3TbJw?si=U40eNf5lTP-HlkHq
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Funcionalidades
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Cadastro de usuários na rota `/register`.
+- Login de usuários na rota `/login`.
+- Envio de tweets através da rota `/tweets`.
+- Upload de uma foto de perfil na rota `/upload`.
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Requisitos do Sistema
 
-### Premium Partners
+Antes de começar, certifique-se de que sua máquina atenda aos seguintes requisitos:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+- **PHP**: Versão 8.1 ou superior.
+- **Composer**: Gerenciador de dependências do PHP.
+- **Node.js**: Versão 16 ou superior.
+- **npm** ou **yarn**: Gerenciador de pacotes para o front-end.
+- **Banco de Dados**: MySQL ou equivalente configurado.
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Instalação
 
-## Code of Conduct
+Siga as etapas abaixo para configurar e executar o projeto em sua máquina local:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 1. Clonar o Repositório
 
-## Security Vulnerabilities
+```bash
+git clone https://github.com/JoseFilho0/livewire-Especializa-TI.git
+cd nome-do-repositorio
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 2. Instalar Dependências do Back-end
 
-## License
+Utilize o Composer para instalar as dependências do Laravel:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+composer install
+```
+
+### 3. Configurar o Arquivo `.env`
+
+Crie um arquivo `.env` a partir do exemplo fornecido:
+
+```bash
+cp .env.example .env
+```
+
+Abra o arquivo `.env` e configure as seguintes variáveis:
+
+```env
+APP_NAME=Projeto de Envio de Tweets
+APP_ENV=local
+APP_KEY=base64:...
+APP_DEBUG=true
+APP_URL=http://localhost
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nome_do_banco
+DB_USERNAME=seu_usuario
+DB_PASSWORD=sua_senha
+```
+
+### 4. Gerar a Chave da Aplicação
+
+```bash
+php artisan key:generate
+```
+
+### 5. Configurar o Banco de Dados
+
+Execute as migrações para criar as tabelas necessárias:
+
+```bash
+php artisan migrate
+```
+
+### 6. Instalar Dependências do Front-end
+
+Use `npm` ou `yarn` para instalar as dependências do front-end:
+
+```bash
+npm install
+```
+
+### 7. Compilar os Arquivos Estáticos
+
+Compile os assets do projeto:
+
+```bash
+npm run dev
+```
+
+---
+
+## Uso
+
+### Iniciar o Servidor
+
+Inicie o servidor local do Laravel:
+
+```bash
+php artisan serve
+```
+
+A aplicação estará disponível em [http://localhost:8000](http://localhost:8000).
+
+### Rotas Principais
+
+1. **Cadastro de Usuários**: `/register`
+   - Enviar os dados `name`, `email`, e `password` no corpo da requisição.
+
+2. **Login de Usuários**: `/login`
+   - Enviar os dados `email` e `password` no corpo da requisição.
+
+3. **Envio de Tweets**: `/tweets`
+   - O usuário deve estar autenticado.
+   - Enviar os dados `content` (conteúdo do tweet).
+
+4. **Upload de Foto de Perfil**: `/upload`
+   - Depois de realizar o cadastro pode ir na rota acima e fazer upload da sua foto de perfil.
+
+---
+
+## Licença
+
+Este projeto é licenciado sob a [Licença MIT](LICENSE).
+
+---
+
+Obrigado por explorar este projeto! Espero que você goste de utilizá-lo tanto quanto eu gostei de desenvolvê-lo! 🚀

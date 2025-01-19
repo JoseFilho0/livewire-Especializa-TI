@@ -5,3 +5,7 @@
 [x-cloak] {
     display: none;
 }
+
+.container-lg {
+    @apply max-w-[1248px] mx-auto
+}
